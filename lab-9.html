@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>2D CSS Transforms</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        p {
+            height: 100px;
+            width: 100px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        p#rotate {
+            background-color: orange;
+        }
+        p#scale {
+            background-color: purple;
+        }
+        p#skew {
+            background-color: limegreen;
+        }
+        p#translate {
+            background-color: hotpink;
+        }
+        /* Step 2: Transforms */
+        #rotate {
+            transform: rotate(0deg);
+        }
+
+        #scale {
+            transform: scale(1);
+        }
+
+        #skew {
+            transform: skew(0deg);
+        }
+
+        #translate {
+            transform: translate(0, 0);
+        }
+
+        /* Step 3: Transitions with hover effects */
+        #rotate:hover {
+            transform: rotate(45deg);
+        }
+
+        #scale:hover {
+            transform: scale(1.5);
+        }
+
+        #skew:hover {
+            transform: skew(20deg);
+        }
+
+        #translate:hover {
+            transform: translate(50px, 50px);
+        }
+
+        /* Step 4 & 5: New element with animation */
+        #bounce {
+            background-color: #3498db; /* New unique color */
+            animation: bounceAround 2s infinite;
+        }
+
+        /* Keyframe animation */
+        @keyframes bounceAround {
+            0% {
+                transform: translate(0, 0);
+                background-color: #3498db;
+            }
+            25% {
+                transform: translate(100px, 0) rotate(90deg);
+                background-color: #e74c3c;
+            }
+            50% {
+                transform: translate(100px, 100px) scale(1.5);
+                background-color: #2ecc71;
+            }
+            75% {
+                transform: translate(0, 100px) rotate(-90deg);
+                background-color: #f1c40f;
+            }
+            100% {
+                transform: translate(0, 0);
+                background-color: #3498db;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p id="rotate">Rotate me.</p>
+    <p id="scale">Scale me.</p>
+    <p id="skew">Skew me.</p>
+    <p id="translate">Translate me.</p>
+    <p id="bounce">Bounce me!</p>
+</body>
+</html>
